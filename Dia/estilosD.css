@@ -1,0 +1,173 @@
+body.inicio {
+  text-align: center;
+  background-image: url('imagenes/fondoD.jpeg');
+  background-size: cover;
+}
+
+body.ejercicio {
+  text-align: center;
+  background-image: url('imagenes/fondoD3.jpeg');
+  background-size: cover;
+}
+
+body.rutina {
+  text-align: center;
+  background-image: url('imagenes/fondoD2.jpeg');
+  background-size: cover;
+}
+
+ul.opciones li {
+  display: flex;
+  justify-content: center;
+}
+
+ul.opciones li a {
+  color: #ffffff;
+  padding: 18px 18px;
+  border-radius: 10px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: #B47BA7;
+  text-align: center;
+  align-content: center;
+  font-family: "Alata-Regular", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  position: relative;
+  width: 239px;
+  height: 31px;
+}
+
+ul.opciones li a:hover:not(.active) {
+  background-color: #db5fdd;
+}
+
+ul.regresar li {
+  display: flex;
+  justify-content: center;
+}
+
+ul.regresar li a {
+  color: #ffffff;
+  padding: 18px 18px;
+  border-radius: 15px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: #867BB6;
+  text-align: center;
+  align-content: center;
+  font-family: "Alata-Regular", sans-serif;
+  font-size: 20px;
+  position: absolute;
+  width: 100px;
+  height: 15px;
+}
+
+ul.regresar li a:hover:not(.active) {
+  background-color: #db5fdd;
+}
+
+h1 {
+  text-align: left;
+  position: relative;
+  font-family: "Jost-SemiBold", sans-serif;
+  color: #1D1432;
+  padding: 0.5em;
+}
+
+h2 {
+  text-align: left;
+  font-family: "Jost-SemiBold", sans-serif;
+  color: #1D1432;
+  padding: 0.5em;
+}
+
+.inicio p {
+  font-family: "Alata-Regular", sans-serif;
+  color: #1D1432;
+  position: relative;
+}
+
+.rutina p {
+  font-family: "Alata-Regular", sans-serif;
+  color: #1D1432;
+  position: relative;
+}
+
+.ejercicio p {
+  font-family: "Alata-Regular", sans-serif;
+  color: #1D1432;
+  position: relative;
+}
+
+ul.vidE li {
+  list-style: none;
+  justify-content: center;
+}
+
+.content {
+  width: 50%;
+  padding: 1em;
+  box-sizing: border-box;
+  float: left;
+}
+
+ul.tareas li {
+  display: flex;
+}
+
+ul.tareas li a {
+  text-decoration: none;
+  margin-top: 0;
+  padding-left: 0em;
+}
+
+/*** Styling Radio & Checkbox Input Fields (start here) ***/
+label {
+  font-weight: 600;
+  text-align: left;
+  color: #1D1432;
+  margin-bottom: 11px;
+  width: 100%;
+  float: left;
+  cursor: pointer;
+  padding: 0 0.6em;
+  box-sizing: border-box;
+  transition: all 0.5s ease 0s;
+  font-family: "Alata-Regular", sans-serif;
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]+label {
+  line-height: 2.5em;
+}
+
+input[type="checkbox"]+label:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 0.5em;
+  border: 2px solid #ccc;
+  background: #fff;
+  margin-top: 0.5em;
+}
+
+
+input[type="checkbox"]:checked+label:before {
+  border-color: #ee2b93;
+  border-radius: 50%;
+  background-color: #ee2b93;
+}
+
+@media (max-width: 650px) {
+  .content {
+    width: 100%;
+  }
+}
+
+

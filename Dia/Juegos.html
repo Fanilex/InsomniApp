@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Games</title>
+  <style>
+    * {
+      margin: auto;
+    }
+
+    h1 {
+      color: #372e49;
+      text-align: center;
+      font-family: "Jost-SemiBold", sans-serif;
+      font-size: 76px;
+      font-weight: 600;
+      position: relative;
+      width: 311px;
+      height: 155px;
+    }
+
+    button {
+      background: #67C2DB;
+      border: #67C2DB;
+    }
+
+    #disable {
+      background: #CCABD8;
+      border: #CCABD8;
+    }
+
+    #iniciomit {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+    }
+
+    #iniciotri {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+    }
+
+    #comenzarmit {
+      background: #B47BA7;
+      width: 90%;
+      height: 90%;
+      text-align: center;
+      border-radius: 20px;
+      margin-top: 1rem
+    }
+
+    #comenzartri {
+      background: #9B93B8;
+      width: 90%;
+      height: 90%;
+      text-align: center;
+      border-radius: 20px;
+      margin-top: 1rem
+    }
+
+    #texto {
+      margin: 1rem
+    }
+
+    img {
+      width: 60%;
+      height: 60%
+    }
+
+    body {
+      background-image: url(imagenes/fondo.jpg)
+    }
+
+    #juegos {
+      text-align: center;
+    }
+
+    #juego2 {
+      width: 90%;
+      height: 9rem;
+      background: #867bb6;
+      border-radius: 20px;
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.83);
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      position: relative;
+    }
+
+    #juego3 {
+      width: 90%;
+      height: 9rem;
+      background: #B47BA7;
+      border-radius: 20px;
+      margin-top: 1rem;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.83);
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+      position: relative;
+    }
+
+    #button {
+      background: #372E49;
+      border-radius: 20px;
+      margin-top: 1rem;
+      color: rgba(255, 255, 255, 0.83);
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 30px;
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #cabeza {
+      display: flex;
+    }
+
+    h2 {
+      color: #372e49;
+      text-align: center;
+      font-family: "Jost-SemiBold", sans-serif;
+      font-size: 76px;
+      font-weight: 600;
+      position: relative;
+      width: 90%;
+    }
+
+    h3 {
+      color: #372e49;
+      text-align: center;
+      font-family: "Jost-SemiBold", sans-serif;
+      font-size: 60px;
+      font-weight: 600;
+      position: relative;
+      width: 90%;
+    }
+
+    #inicio {
+      background: #DEDDBE;
+      border: #DEDDBE;
+      width: 20%;
+      border-radius: 20px
+    }
+
+    #volver2 {
+      background: #9B93B8;
+      border: #9B93B8;
+      width: 20%;
+      border-radius: 20px
+    }
+
+    #volver3 {
+      background: #B47BA7;
+      border: #B47BA7;
+      width: 20%;
+      border-radius: 20px
+    }
+
+    #instructions {
+      color: rgba(255, 255, 255, 0.83);
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      text-align: left
+    }
+  </style>
+  <script>
+    function mitos() {
+      document.getElementById("iniciomit").style.display = "inline-block"
+    }
+    function trivia() {
+      document.getElementById("iniciotri").style.display = "inline-block"
+    }
+    function regresar() {
+      document.getElementById("iniciotri").style.display = "none"
+      document.getElementById("iniciomit").style.display = "none"
+    }
+  </script>
+</head>
+
+<body>
+  <div id="titulo">
+    <button id="inicio"><a href="inicio.html"><img src="imagenes/flecha.png"></a></button>
+    <h1>
+      <p>Games</p>
+    </h1>
+  </div>
+  <div id=juegos>
+    <div id="2"><button id="juego2" onclick="trivia()">Trivia</button></div>
+    <div id="3"><button id="juego3" onclick="mitos()">Myths and Truths</button></div>
+  </div>
+  <div id="iniciotri">
+    <div id=comenzartri>
+      <div id="texto">
+        <div id="cabeza">
+          <button onclick="regresar()" id="volver2"><img src="imagenes/flecha.png"></button>
+          <h2>Trivia</h2>
+        </div>
+        <div id="instructions">
+          <p>Instructions:</p></br>
+          <p>1. Read the question presented carefully</p></br>
+          <p>2. Select the answer that you think is correct</p>
+          <p>3. Press the check button to verify your answer and move on to the next question</p></br>
+          <p>4. The game ends when you have answered all 10 questions</p></br>
+          <p>Have fun!</p>
+        </div>
+        <button id="button"><a href="trivia.html">Start</a></button>
+      </div>
+    </div>
+  </div>
+  <div id="iniciomit">
+    <div id=comenzarmit>
+      <div id="texto">
+        <div id="cabeza">
+          <button onclick="regresar()" id="volver3"><img src="imagenes/flecha.png"></button>
+          <h3>Myths and Truths</h3>
+        </div>
+        <div id="instructions">
+          <p>Instructions:</p></br>
+          <p>1. Read the sentence carefully</p></br>
+          <p>2. If you believe the sentence is true, select the green thumbs up. If you think it's a myth, select the
+            red thumbs down</p></br>
+          <p>3. Press the check button to verify your answer and move to the next sentence</br>
+          <p>Have fun!</p>
+        </div>
+        <button id="button">Start</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Trivia</title>
+  <style>
+    * {
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      color: #372e49;
+      text-align: center;
+      font-family: "Jost-SemiBold", sans-serif;
+      font-size: 76px;
+      font-weight: 600;
+      position: relative;
+      width: 311px;
+      height: 155px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 1rem
+    }
+
+    body {
+      background-image: url(imagenes/fondo_tri.jpg)
+    }
+
+    #opciones {
+      margin-bottom: 3rem
+    }
+
+    #correcta1 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta1 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien1 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal1 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta2 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta2 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien2 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal2 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta3 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta3 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien3 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal3 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta4 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta4 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien4 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal4 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta5 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta5 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien5 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal5 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta6 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta6 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien6 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal6 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta7 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta7 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien7 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal7 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta8 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta8 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien8 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal8 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta9 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta9 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien9 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal9 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #correcta10 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #incorrecta10 {
+      display: none;
+      background: #382F4A;
+      color: white;
+      border: #382F4A;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #bien10 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #mal10 {
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #titulo {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #boton {
+      width: 10%;
+    }
+
+    #trivia {
+      width: 75%;
+      margin: 1rem
+    }
+
+    #equis {
+      background: #DEDDBE;
+      border: #DEDDBE
+    }
+
+    #equis img {
+      width: 1rem
+    }
+
+    #button {
+      background: #867BB7;
+      border: #867BB7;
+      color: white;
+      font-size: 1rem;
+      border-radius: 20px;
+      width: 80%;
+      margin-top: 1rem;
+      color: #ffffff;
+      text-align: center;
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      position: relative;
+    }
+
+    #pregunta2 {
+      display: none;
+    }
+
+    #pregunta3 {
+      display: none;
+    }
+
+    #pregunta4 {
+      display: none;
+    }
+
+    #pregunta5 {
+      display: none;
+    }
+
+    #pregunta6 {
+      display: none;
+    }
+
+    #pregunta7 {
+      display: none;
+    }
+
+    #pregunta8 {
+      display: none;
+    }
+
+    #pregunta9 {
+      display: none;
+    }
+
+    #pregunta10 {
+      display: none;
+    }
+
+    #respuesta {
+      background: #FBFCF7;
+      width: 90%;
+      height: 90%;
+      text-align: center;
+      border-radius: 20px;
+      margin-top: 1rem
+    }
+
+    #respuesta img {
+      width: 9rem;
+      height: 9rem;
+      margin-top: 2rem
+    }
+
+    #descripción p {
+      font-size: 1rem
+    }
+
+    #conti {
+      background: #867BB7;
+      color: white;
+      border: #867BB7;
+      font-size: 2rem;
+      border-radius: 20px;
+    }
+
+    #frase {
+      margin: 2rem
+    }
+
+    #final {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #puntuacion {
+      color: #372e49;
+      text-align: center;
+      font-family: "Jost-SemiBold", sans-serif;
+      font-size: 76px;
+      font-weight: 600;
+      width: 100%;
+      background: #DEDDBE;
+      border: #DEDDBE
+    }
+
+    #dejar {
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      display: none;
+      left: 0;
+    }
+
+    #go {
+      background: #372E49;
+      color: white;
+      width: 90%;
+      height: 30%;
+      margin-top: 10rem;
+      border-radius: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #ultimo {
+      background: #867BB7;
+      border: #867BB7;
+      color: white;
+      border-radius: 20px;
+      font-size: 2rem;
+      margin: 0.5rem;
+    }
+
+    #question {
+      background: #FBFBF9;
+      width: 90%;
+      height: 4rem;
+      border-radius: 20px;
+      color: #000000;
+      text-align: center;
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      position: relative;
+    }
+
+    #over {
+      background: #867BB5;
+      width: 90%;
+      border-radius: 20px;
+    }
+
+    #score {
+      color: #372e49;
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 40px;
+      font-weight: 400;
+    }
+
+    #texover {
+      color: rgba(255, 255, 255, 0.83);
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 50px;
+      font-weight: 400;
+    }
+
+    #text {
+      color: rgba(255, 255, 255, 0.83);
+      font-family: "Alata-Regular", sans-serif;
+      font-size: 50px;
+      font-weight: 400;
+    }
+  </style>
+  <script>
+    var puntaje = 0;
+    function buena1() {
+      document.getElementById("correcta1").style.display = "inline-block"
+      document.getElementById("incorrecta1").style.display = "none"
+    }
+    function mala1() {
+      document.getElementById("incorrecta1").style.display = "inline-block"
+      document.getElementById("correcta1").style.display = "none"
+    }
+    function c1() {
+      puntaje = puntaje + 1
+      document.getElementById("bien1").style.display = "inline-block"
+    }
+    function in1() {
+      document.getElementById("mal1").style.display = "inline-block"
+    }
+    function continuar1() {
+      document.getElementById("pregunta2").style.display = "inline-block"
+      document.getElementById("pregunta1").style.display = "none"
+      document.getElementById("bien1").style.display = "none"
+      document.getElementById("mal1").style.display = "none"
+    }
+    function buena2() {
+      document.getElementById("correcta2").style.display = "inline-block"
+      document.getElementById("incorrecta2").style.display = "none"
+    }
+    function mala2() {
+      document.getElementById("incorrecta2").style.display = "inline-block"
+      document.getElementById("correcta2").style.display = "none"
+    }
+    function c2() {
+      puntaje = puntaje + 1
+      document.getElementById("bien2").style.display = "inline-block"
+    }
+    function in2() {
+      document.getElementById("mal2").style.display = "inline-block"
+    }
+    function continuar2() {
+      document.getElementById("pregunta3").style.display = "inline-block"
+      document.getElementById("pregunta2").style.display = "none"
+      document.getElementById("bien2").style.display = "none"
+      document.getElementById("mal2").style.display = "none"
+    }
+    function mala3() {
+      document.getElementById("incorrecta3").style.display = "inline-block"
+      document.getElementById("correcta3").style.display = "none"
+    }
+    function buena3() {
+      document.getElementById("correcta3").style.display = "inline-block"
+      document.getElementById("incorrecta3").style.display = "none"
+    }
+    function c3() {
+      puntaje = puntaje + 1
+      document.getElementById("bien3").style.display = "inline-block"
+    }
+    function in3() {
+      document.getElementById("mal3").style.display = "inline-block"
+    }
+    function continuar3() {
+      document.getElementById("pregunta4").style.display = "inline-block"
+      document.getElementById("pregunta3").style.display = "none"
+      document.getElementById("bien3").style.display = "none"
+      document.getElementById("mal3").style.display = "none"
+    }
+    function mala4() {
+      document.getElementById("incorrecta4").style.display = "inline-block"
+      document.getElementById("correcta4").style.display = "none"
+    }
+    function buena4() {
+      document.getElementById("correcta4").style.display = "inline-block"
+      document.getElementById("incorrecta4").style.display = "none"
+    }
+    function c4() {
+      puntaje = puntaje + 1
+      document.getElementById("bien4").style.display = "inline-block"
+    }
+    function in4() {
+      document.getElementById("mal4").style.display = "inline-block"
+    }
+    function continuar4() {
+      document.getElementById("pregunta5").style.display = "inline-block"
+      document.getElementById("pregunta4").style.display = "none"
+      document.getElementById("bien4").style.display = "none"
+      document.getElementById("mal4").style.display = "none"
+    }
+    function mala5() {
+      document.getElementById("incorrecta5").style.display = "inline-block"
+      document.getElementById("correcta5").style.display = "none"
+    }
+    function buena5() {
+      document.getElementById("correcta5").style.display = "inline-block"
+      document.getElementById("incorrecta5").style.display = "none"
+    }
+    function c5() {
+      puntaje = puntaje + 1
+      document.getElementById("bien5").style.display = "inline-block"
+    }
+    function in5() {
+      document.getElementById("mal5").style.display = "inline-block"
+    }
+    function continuar5() {
+      document.getElementById("pregunta6").style.display = "inline-block"
+      document.getElementById("pregunta5").style.display = "none"
+      document.getElementById("bien5").style.display = "none"
+      document.getElementById("mal5").style.display = "none"
+    }
+    function buena6() {
+      document.getElementById("correcta6").style.display = "inline-block"
+      document.getElementById("incorrecta6").style.display = "none"
+    }
+    function mala6() {
+      document.getElementById("incorrecta6").style.display = "inline-block"
+      document.getElementById("correcta6").style.display = "none"
+    }
+    function c6() {
+      puntaje = puntaje + 1
+      document.getElementById("bien6").style.display = "inline-block"
+    }
+    function in6() {
+      document.getElementById("mal6").style.display = "inline-block"
+    }
+    function continuar6() {
+      document.getElementById("pregunta7").style.display = "inline-block"
+      document.getElementById("pregunta6").style.display = "none"
+      document.getElementById("bien6").style.display = "none"
+      document.getElementById("mal6").style.display = "none"
+    }
+    function mala7() {
+      document.getElementById("incorrecta7").style.display = "inline-block"
+      document.getElementById("correcta7").style.display = "none"
+    }
+    function buena7() {
+      document.getElementById("correcta7").style.display = "inline-block"
+      document.getElementById("incorrecta7").style.display = "none"
+    }
+    function c7() {
+      puntaje = puntaje + 1
+      document.getElementById("bien7").style.display = "inline-block"
+    }
+    function in7() {
+      document.getElementById("mal7").style.display = "inline-block"
+    }
+    function continuar7() {
+      document.getElementById("pregunta8").style.display = "inline-block"
+      document.getElementById("pregunta7").style.display = "none"
+      document.getElementById("bien7").style.display = "none"
+      document.getElementById("mal7").style.display = "none"
+    }
+    function buena8() {
+      document.getElementById("correcta8").style.display = "inline-block"
+      document.getElementById("incorrecta8").style.display = "none"
+    }
+    function mala8() {
+      document.getElementById("incorrecta8").style.display = "inline-block"
+      document.getElementById("correcta8").style.display = "none"
+    }
+    function c8() {
+      puntaje = puntaje + 1
+      document.getElementById("bien8").style.display = "inline-block"
+    }
+    function in8() {
+      document.getElementById("mal8").style.display = "inline-block"
+    }
+    function continuar8() {
+      document.getElementById("pregunta9").style.display = "inline-block"
+      document.getElementById("pregunta8").style.display = "none"
+      document.getElementById("bien8").style.display = "none"
+      document.getElementById("mal8").style.display = "none"
+    }
+    function mala9() {
+      document.getElementById("incorrecta9").style.display = "inline-block"
+      document.getElementById("correcta9").style.display = "none"
+    }
+    function buena9() {
+      document.getElementById("correcta9").style.display = "inline-block"
+      document.getElementById("incorrecta9").style.display = "none"
+    }
+    function c9() {
+      puntaje = puntaje + 1
+      document.getElementById("bien9").style.display = "inline-block"
+    }
+    function in9() {
+      document.getElementById("mal9").style.display = "inline-block"
+    }
+    function continuar9() {
+      document.getElementById("pregunta10").style.display = "inline-block"
+      document.getElementById("pregunta9").style.display = "none"
+      document.getElementById("bien9").style.display = "none"
+      document.getElementById("mal9").style.display = "none"
+    }
+    function mala10() {
+      document.getElementById("incorrecta10").style.display = "inline-block"
+      document.getElementById("correcta10").style.display = "none"
+    }
+    function buena10() {
+      document.getElementById("correcta10").style.display = "inline-block"
+      document.getElementById("incorrecta10").style.display = "none"
+    }
+    function c10() {
+      puntaje = puntaje + 1
+      document.getElementById("bien10").style.display = "inline-block"
+    }
+    function in10() {
+      document.getElementById("mal10").style.display = "inline-block"
+    }
+    function continuar10() {
+      document.getElementById("final").style.display = "inline-block"
+      document.getElementById("pregunta10").style.display = "none"
+      document.getElementById("bien10").style.display = "none"
+      document.getElementById("mal10").style.display = "none"
+      document.getElementById("titulo").style.display = "none"
+      document.getElementById("puntuacion").value = puntaje
+    }
+    function salir() {
+      document.getElementById("dejar").style.display = "inline-block"
+      document.getElementById("opciones").style.display = "none"
+      document.getElementById("question").style.display = "none"
+    }
+    function seguir() {
+      document.getElementById("dejar").style.display = "none"
+      document.getElementById("opciones").style.display = "inline-block"
+      document.getElementById("question").style.display = "inline-block"
+    }
+  </script>
+</head>
+
+<body>
+  <div id="titulo">
+    <div id="trivia">
+      <h1>Trivia</h1>
+    </div>
+    <div id="boton"><button id="equis" onclick="salir()"><img src="imagenes/equis.png"></button></div>
+  </div>
+  <div id="dejar">
+    <div id="go">
+      <div id="text">
+        <p>Are you sure you want to go out? Your progress will NOT be saved</p>
+      </div>
+      <button id="ultimo"><a href="Juegos.html">Leave</a></button>
+      <button onclick="seguir()" id="ultimo">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta1>
+    <div id="question">
+      <p>Which of the following activities before bed can negatively affect sleep?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="buena1()" id="button">Do intense exercise</button>
+      <button onclick="mala1()" id="button">Read a book</button>
+      <button onclick="mala1()" id="button">Have a cup of herbal tea</button>
+      <button onclick="mala1()" id="button">Listen to soft music</button>
+    </div>
+    <button id="correcta1" onclick="c1()">Check</button>
+    <button id="incorrecta1" onclick="in1()">Check</button>
+  </div>
+  <div id="bien1">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar1()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal1">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>An activity that can impair sleep is doing intense exercise close to bedtime</p>
+      </div>
+      <button onclick="continuar1()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta2>
+    <div id="question">
+      <p>Which of the following factors does not usually contribute to chronic insomnia?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala2()" id="button">Stress</button>
+      <button onclick="mala2()" id="button">Excessive caffeine consumption</button>
+      <button onclick="buena2()" id="button">Sleep in a dark environment</button>
+      <button onclick="mala2()" id="button">Sleep disorders</button>
+    </div>
+    <button id="correcta2" onclick="c2()">Check</button>
+    <button id="incorrecta2" onclick="in2()">Check</button>
+  </div>
+  <div id="bien2">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar2()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal2">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>The non-contributing factor to chronic insomnia is sleeping in a dark environment</p>
+      </div>
+      <button onclick="continuar2()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta3>
+    <div id="question">
+      <p>What is a common recommendation to improve sleep hygiene?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala3()" id="button">Watching TV in bed</button>
+      <button onclick="buena3()" id="button">Establish a regular sleep routine</button>
+      <button onclick="mala3()" id="button">Maintain a warm temperature in the room</button>
+      <button onclick="mala3()" id="button">Going to bed and waking up at irregular times</button>
+    </div>
+    <button id="correcta3" onclick="c3()">Check</button>
+    <button id="incorrecta3" onclick="in3()">Check</button>
+  </div>
+  <div id="bien3">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar3()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal3">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>It is highly recommended to establish a regular sleep routine</p>
+      </div>
+      <button onclick="continuar3()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta4>
+    <div id="question">
+      <p>What hormone is associated with sleep-wake regulation?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala4()" id="button">Adrenalin</button>
+      <button onclick="mala4()" id="button">Insulin</button>
+      <button onclick="mala4()" id="button">Dopamine</button>
+      <button onclick="buena4()" id="button">Melatonin</button>
+    </div>
+    <button id="correcta4" onclick="c4()">Check</button>
+    <button id="incorrecta4" onclick="in4()">Check</button>
+  </div>
+  <div id="bien4">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar4()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal4">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>Melatonin is the hormone associated with the regulation of sleep and wakefulness</p>
+      </div>
+      <button onclick="continuar4()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta5>
+    <div id="question">
+      <p>Which of the following foods usually contains caffeine and can affect sleep?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala5()" id="button">Banana</button>
+      <button onclick="mala5()" id="button">Oatmeal</button>
+      <button onclick="mala5()" id="button">Yoghurt</button>
+      <button onclick="buena5()" id="button">Dark chocolate</button>
+    </div>
+    <button id="correcta5" onclick="c5()">Check</button>
+    <button id="incorrecta5" onclick="in5()">Check</button>
+  </div>
+  <div id="bien5">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar5()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal5">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>Dark chocolate usually contains caffeine, which can affect sleep</p>
+      </div>
+      <button onclick="continuar5()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta6>
+    <div id="question">
+      <p>What is the recommended duration for a revitalizing nap?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="buena6()" id="button">30 minutes</button>
+      <button onclick="mala6()" id="button">1 hour</button>
+      <button onclick="mala6()" id="button">2 hours</button>
+      <button onclick="mala6()" id="button">15 minutes</button>
+    </div>
+    <button id="correcta6" onclick="c6()">Check</button>
+    <button id="incorrecta6" onclick="in6()">Check</button>
+  </div>
+  <div id="bien6">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar6()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal6">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>The recommended duration for a nap is 30 minutes</p>
+      </div>
+      <button onclick="continuar6()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta7>
+    <div id="question">
+      <p>What is an effective technique for dealing with occasional insomnia?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala7()" id="button">Consume caffeine before bed</button>
+      <button onclick="buena7()" id="button">Practice relaxation and meditation</button>
+      <button onclick="mala7()" id="button">Watching TV in bed</button>
+      <button onclick="mala7()" id="button">Sleep at different times each day</button>
+    </div>
+    <button id="correcta7" onclick="c7()">Check</button>
+    <button id="incorrecta7" onclick="in7()">Check</button>
+  </div>
+  <div id="bien7">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar7()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal7">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>Practicing relaxation and meditation is an effective technique for dealing with occasional insomnia</p>
+      </div>
+      <button onclick="continuar7()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta8>
+    <div id="question">
+      <p>Which of the following activities is not recommended right before bed?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala8()" id="button">Take a hot bath</button>
+      <button onclick="mala8()" id="button">Read a relaxing book</button>
+      <button onclick="buena8()" id="button">Watch an exciting movie</button>
+      <button onclick="mala8()" id="button">Listen to soothing music</button>
+    </div>
+    <button id="correcta8" onclick="c8()">Check</button>
+    <button id="incorrecta8" onclick="in8()">Check</button>
+  </div>
+  <div id="bien8">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar8()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal8">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>Watching an exciting movie before bed can be stimulating and therefore affect sleep</p>
+      </div>
+      <button onclick="continuar8()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta9>
+    <div id="question">
+      <p>What is the importance of maintaining a dark environment at night?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="buena9()" id="button">Stimulate melatonin production</button>
+      <button onclick="mala9()" id="button">Reduce stress</button>
+      <button onclick="mala9()" id="button">Increase brain activity</button>
+      <button onclick="mala9()" id="button">Improve digestion</button>
+    </div>
+    <button id="correcta9" onclick="c9()">Check</button>
+    <button id="incorrecta9" onclick="in9()">Check</button>
+  </div>
+  <div id="bien9">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar9()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal9">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>The importance of maintaining a dark environment is to stimulate the production of melatonin, the sleep
+          hormone</p>
+      </div>
+      <button onclick="continuar9()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id=pregunta10>
+    <div id="question">
+      <p>What is a sign that you might have insomnia?</p>
+    </div>
+    <div id="opciones">
+      <button onclick="mala10()" id="button">Sleep deeply for 8 hours each night</button>
+      <button onclick="mala10()" id="button">Wake up feeling rested every morning</button>
+      <button onclick="buena10()" id="button">Experiencing difficulty falling or staying asleep</button>
+      <button onclick="mala10()" id="button">Have vivid dreams every night</button>
+    </div>
+    <button id="correcta10" onclick="c10()">Check</button>
+    <button id="incorrecta10" onclick="in10()">Check</button>
+  </div>
+  <div id="bien10">
+    <div id="respuesta">
+      <img src="imagenes/palomita.png">
+      <div id="frase">
+        <p><strong>The answer is correct</strong></p>
+      </div>
+      <button onclick="continuar10()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="mal10">
+    <div id="respuesta">
+      <img src="imagenes/mal.png">
+      <div id="frase">
+        <p><strong>The answer is incorrect</strong></p>
+      </div>
+      <div id="descripción">
+        <p>Experiencing difficulty falling or staying asleep could be a sign of having insomnia</p>
+      </div>
+      <button onclick="continuar10()" id="conti">Continue</button>
+    </div>
+  </div>
+  <div id="final">
+    <div>
+      <h1>Trivia</h1>
+      <div id="over">
+        <p id="texover">Game Over!</p>
+      </div>
+      <p id="score">Your score was:</p>
+      <input id="puntuacion" readonly></input>
+    </div>
+    <button id="ultimo"><a href="Juegos.html">Go back to games</a></button>
+  </div>
+</body>
+
+</html>

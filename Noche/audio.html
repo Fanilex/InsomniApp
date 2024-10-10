@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="estiloN.css">
+	<title>Night-Audios</title>
+</head>
+
+<body>
+	<h1>Audios</h1>
+	<p>Immersive audios that will help you fall asleep.</p>
+
+	<h2>Short Audios</h2>
+	<!-- Button -->
+	<button onclick="toggleAudio('Audiocorto1')">Believe in miracle</button>
+	<button onclick="toggleAudio('Audiocorto2')">Just relax</button>
+	<button onclick="toggleAudio('Audiocorto3')">Nature</button>
+
+	<!-- audios -->
+	<audio id="Audiocorto1" controls style="display: none;">
+		<source src="believe-in-miracle-by-prabajithk-121041.mp3" type="audio/mp3">
+	</audio>
+
+	<audio id="Audiocorto2" controls style="display: none;">
+		<source src="just-relax-11157.mp3" type="audio/mp3">
+	</audio>
+
+	<audio id="Audiocorto3" controls style="display: none;">
+		<source src="nature-99499.mp3" type="audio/mp3">
+	</audio>
+
+	<h2>Long Audios</h2>
+	<!-- Button -->
+	<button onclick="toggleAudio('Audiolargo1')">Calming music</button>
+	<button onclick="toggleAudio('Audiolargo2')">Garden of eden</button>
+	<button onclick="toggleAudio('Audiolargo3')">Relaxing music</button>
+
+	<!-- audios -->
+	<audio id="Audiolargo1" controls style="display: none;">
+		<source src="calming-music-119753.mp3" type="audio/mp3">
+	</audio>
+	<audio id="Audiolargo2" controls style="display: none;">
+		<source src="garden-of-eden-186428.mp3" type="audio/mp3">
+	</audio>
+	<audio id="Audiolargo3" controls style="display: none;">
+		<source src="relaxing-music-vol1-124477.mp3" type="audio/mp3">
+	</audio>
+
+	<nav>
+		<ul class="back">
+			<li><a href="inicio.html">Back</a></li>
+		</ul>
+	</nav>
+
+	<script>
+		function toggleAudio(audioId) {
+			// Obtener el elemento de audio
+			var audio = document.getElementById(audioId);
+
+			// Verificar si el audio está reproduciéndose
+			if (audio.paused) {
+				// Si está pausado, reproducirlo
+				audio.play();
+			} else {
+				// Si se está reproduciendo, detenerlo
+				audio.pause();
+				// Reiniciar el audio para poder reproducirlo desde el principio en la próxima vez
+				audio.currentTime = 0;
+			}
+		}
+	</script>
+</body>
+</html>
